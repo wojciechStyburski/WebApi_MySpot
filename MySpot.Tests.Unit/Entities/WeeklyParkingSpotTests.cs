@@ -55,7 +55,8 @@ public class WeeklyParkingSpotTests
         var exception = Record.Exception(() => _weeklyParkingSpot.AddReservation(nextReservation, reservationDate));
         
         exception.ShouldNotBeNull();
-        exception.ShouldBeOfType<ParkingSpotCapacityExceededException>();
+        exception.ShouldBeOfType<ParkingSpotAlreadyReservedException>();
+        
     }
 
     [Fact]
